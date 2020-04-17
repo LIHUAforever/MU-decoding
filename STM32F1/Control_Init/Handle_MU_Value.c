@@ -11,7 +11,7 @@ void Send_X_Angle(void)
 
 	for(char i = 0;i < 8;i++)
 	{
-		USART_SendData(USART2,Send_Commond[i]); 
+		USART_SendData(USART2,Send_Commond[i]);
 		delay_ms(1);
 	}
 }
@@ -181,6 +181,7 @@ u8 Handle_Data(uint8_t flag)
 				{
 					Check_Buffer = Check_Buffer+Rx_Buffer[i];
 				}
+				Check_Buffer = Check_Buffer&0x00ff;
 				if(Check_Buffer == Rx_Buffer[Receive_i + 15])
 				{
 					if(Rx_Buffer[Receive_i + 6] == 0x23)
@@ -237,54 +238,64 @@ void ReadMU_Value(void)
 
 float Read_Templature(void)
 {
+	float Error_Flag = 460;
+	char Time_i = 0;
 	delay_ms(30);
 	Send_Templature();
 	delay_ms(30);
-	while(Handle_Data(0) == 0)
+	while(Handle_Data(0) == 0&&Time_i<10)
 	{
 		Usart2_i = 0;
 		memset(Rx_Buffer,0,sizeof(Rx_Buffer));
 		delay_ms(30);
 		Send_XY_Angle();
 		delay_ms(30);
-		
+		Time_i++;
 	}
+	if(Time_i == 10)return Error_Flag;
 	return Templature_Value;
 }
 
 float READ_X_Angle(void)
 {
-	float X_Angle_Temp;
+	float Error_Flag = 460;
+	float X_Angle_Temp = 0;
+	char Time_i = 0;
 	delay_ms(30);
 	Send_XY_Angle();
 	delay_ms(30);
-	while(Handle_Data(1) == 0)
+	while(Handle_Data(1) == 0&&Time_i<10)
 	{
 		Usart2_i = 0;
 		memset(Rx_Buffer,0,sizeof(Rx_Buffer));
 		delay_ms(30);
 		Send_XY_Angle();
 		delay_ms(30);
-		
+		Time_i++;
 	}
+	if(Time_i == 10)return Error_Flag;
 	X_Angle_Temp = X_Angle;
 	return X_Angle_Temp;
 }
 
 float READ_Y_Angle(void)
 {
-	float Y_Angle_Temp;
+	float Error_Flag = 460;
+	float Y_Angle_Temp = 0;
+	char Time_i = 0;
 	delay_ms(30);
 	Send_XY_Angle();
 	delay_ms(30);
-	while(Handle_Data(1) == 0)
+	while(Handle_Data(1) == 0&&Time_i<10)
 	{
 		Usart2_i = 0;
 		memset(Rx_Buffer,0,sizeof(Rx_Buffer));
 		delay_ms(30);
 		Send_XY_Angle();
 		delay_ms(30);
+		Time_i++;
 	}
+	if(Time_i == 10)return Error_Flag;
 	Y_Angle_Temp = Y_Angle;
 	return Y_Angle_Temp;
 }

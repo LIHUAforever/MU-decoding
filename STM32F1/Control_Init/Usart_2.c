@@ -56,7 +56,13 @@ void USART2_IRQHandler(void)
 		{
 			Usart2_i = 0;
 		}
-	}	
+		
+	}
+//	if(USART_GetITStatus(USART1, USART_IT_TXE) != RESET)
+//	{
+//		
+//	}
+	
 }
 
 

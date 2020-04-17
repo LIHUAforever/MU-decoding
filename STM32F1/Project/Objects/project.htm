@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 17 14:41:53 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 17 16:13:51 2020
 <BR><P>
-<H3>Maximum Stack Usage =        120 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        128 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; init &rArr; READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
 <P>
@@ -220,7 +220,7 @@ Global Symbols
 <P><STRONG><a name="[a7]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[54]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; init &rArr; READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -559,7 +559,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Usart2_Init
 </UL>
 
-<P><STRONG><a name="[60]"></a>Handle_Data</STRONG> (Thumb, 496 bytes, Stack size 40 bytes, handle_mu_value.o(i.Handle_Data))
+<P><STRONG><a name="[60]"></a>Handle_Data</STRONG> (Thumb, 498 bytes, Stack size 40 bytes, handle_mu_value.o(i.Handle_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
@@ -599,8 +599,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
 </UL>
 
-<P><STRONG><a name="[6a]"></a>READ_X_Angle</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, handle_mu_value.o(i.READ_X_Angle))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
+<P><STRONG><a name="[6a]"></a>READ_X_Angle</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, handle_mu_value.o(i.READ_X_Angle))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
@@ -743,7 +743,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7e]"></a>init</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, init.o(i.init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = init &rArr; READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = init &rArr; READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Usart2_Init
@@ -753,7 +753,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = main &rArr; init &rArr; READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = main &rArr; init &rArr; READ_X_Angle &rArr; Handle_Data &rArr; Read_Angle &rArr; __aeabi_fdiv
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 </UL>
